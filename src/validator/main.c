@@ -39,13 +39,14 @@ ext_input_wire(PyObject *self, PyObject *args)
     if (input != 0 && input != 1)
         return NULL;
 
-    out = (struct bit *) malloc(sizeof(struct bit));
-    if (out == NULL)
-        return NULL;
+    /* out = (struct bit *) malloc(sizeof(struct bit)); */
+    /* if (out == NULL) */
+    /*     return NULL; */
 
-    out->bit = input;
+    /* out->bit = input; */
 
-    return PyCapsule_New((void *) out, NULL, bit_destructor);
+    /* return PyCapsule_New((void *) out, NULL, bit_destructor); */
+    return PyInt_FromLong(0);
 }
 
 static PyObject *
@@ -57,11 +58,11 @@ ext_output_wire(PyObject *self, PyObject *args)
     if (!PyArg_ParseTuple(args, "O", &py_inp))
         return NULL;
 
-    inp = (struct bit *) PyCapsule_GetPointer(py_inp, NULL);
-    if (inp == NULL)
-        return NULL;
+    /* inp = (struct bit *) PyCapsule_GetPointer(py_inp, NULL); */
+    /* if (inp == NULL) */
+    /*     return NULL; */
 
-    return PyInt_FromLong(inp->bit);
+    return PyInt_FromLong(0);
 }
 
 
@@ -74,20 +75,21 @@ ext_and_gate(PyObject *self, PyObject *args)
     if (!PyArg_ParseTuple(args, "OO", &py_a, &py_b))
         return NULL;
 
-    a = (struct bit *) PyCapsule_GetPointer(py_a, NULL);
-    if (a == NULL)
-        return NULL;
-    b = (struct bit *) PyCapsule_GetPointer(py_b, NULL);
-    if (b == NULL)
-        return NULL;
+    /* a = (struct bit *) PyCapsule_GetPointer(py_a, NULL); */
+    /* if (a == NULL) */
+    /*     return NULL; */
+    /* b = (struct bit *) PyCapsule_GetPointer(py_b, NULL); */
+    /* if (b == NULL) */
+    /*     return NULL; */
 
-    out = (struct bit *) malloc(sizeof(struct bit));
-    if (out == NULL)
-        return NULL;
+    /* out = (struct bit *) malloc(sizeof(struct bit)); */
+    /* if (out == NULL) */
+    /*     return NULL; */
 
-    and_gate(out, a, b);
+    /* and_gate(out, a, b); */
 
-    return PyCapsule_New((void *) out, NULL, bit_destructor);
+    /* return PyCapsule_New((void *) out, NULL, bit_destructor); */
+    return PyInt_FromLong(0);
 }
 
 static PyObject *
@@ -99,20 +101,21 @@ ext_xor_gate(PyObject *self, PyObject *args)
     if (!PyArg_ParseTuple(args, "OO", &py_a, &py_b))
         return NULL;
 
-    a = (struct bit *) PyCapsule_GetPointer(py_a, NULL);
-    if (a == NULL)
-        return NULL;
-    b = (struct bit *) PyCapsule_GetPointer(py_b, NULL);
-    if (b == NULL)
-        return NULL;
+    /* a = (struct bit *) PyCapsule_GetPointer(py_a, NULL); */
+    /* if (a == NULL) */
+    /*     return NULL; */
+    /* b = (struct bit *) PyCapsule_GetPointer(py_b, NULL); */
+    /* if (b == NULL) */
+    /*     return NULL; */
 
-    out = (struct bit *) malloc(sizeof(struct bit));
-    if (out == NULL)
-        return NULL;
+    /* out = (struct bit *) malloc(sizeof(struct bit)); */
+    /* if (out == NULL) */
+    /*     return NULL; */
 
-    xor_gate(out, a, b);
+    /* xor_gate(out, a, b); */
 
-    return PyCapsule_New((void *) out, NULL, bit_destructor);
+    /* return PyCapsule_New((void *) out, NULL, bit_destructor); */
+    return PyInt_FromLong(0);
 }
 
 static PyMethodDef
