@@ -1,12 +1,13 @@
 #!/usr/bin/env python2
 
 import _validator as lib
+import time
 
 S = 0
 COUT = 1
 ZERO = lib.input_wire(0)
 ONE = lib.input_wire(1)
-LENGTH = 11
+LENGTH = 32
 
 def add(x, y, cin):
     t1 = lib.xor_gate(x, cin);
@@ -32,10 +33,10 @@ def printWires(x):
     for i in range(len(x)):
         print lib.output_wire(x[i]),
 
-def getBinary(a, LENGTH):
+def getBinary(a, length):
     ret = []
     de = []
-    for i in range(LENGTH):
+    for i in range(length):
         val = a % 2
         a = a/2
         if val == 0:
@@ -49,8 +50,13 @@ def main():
     num1 = 500
     num2 = 524
     cin = lib.input_wire(0)
-    ret = addFull(getBinary(num1, LENGTH), getBinary(num2, LENGTH), cin)
-    printWires(ret)
+    start = time.time()
+    #for i in range(100000):
+    #    ret = addFull(getBinary(num1, LENGTH), getBinary(num2, LENGTH), cin)
+    lib.add(11, 12);
+    end = time.time()
+    print end - start
+    #printWires(ret)
 
     #a = lib.input_wire(1)
     #b = lib.input_wire(1)
