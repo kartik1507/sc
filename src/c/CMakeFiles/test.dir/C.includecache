@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wangxiao/git/sc/src/c/circuits/int_circuits.c
+../config.h
+/Users/wangxiao/git/sc/src/c/config.h
+../validator/validator.c
+/Users/wangxiao/git/sc/src/c/validator/validator.c
+
+/Users/wangxiao/git/sc/src/c/config.h
+validator/validator.c
+/Users/wangxiao/git/sc/src/c/validator/validator.c
+
+/Users/wangxiao/git/sc/src/c/test.c
+config.h
+/Users/wangxiao/git/sc/src/c/config.h
+circuits/int_circuits.c
+/Users/wangxiao/git/sc/src/c/circuits/int_circuits.c
+
+/Users/wangxiao/git/sc/src/c/validator/validator.c
+stdio.h
+-
+stdlib.h
+-
+
