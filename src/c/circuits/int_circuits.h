@@ -3,5 +3,5 @@
 #include "config.h"
 
 void 
-add(bit* out[2], bit* x, bit* y, bit* cin);
+add(bit out[2], bit* x, bit* y, bit* cin);
 #endif // INT_CIRCUITS_H__

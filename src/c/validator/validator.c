@@ -1,6 +1,5 @@
 #include "validator/validator.h"
 
-
 bit* 
 new_bit()
 {
