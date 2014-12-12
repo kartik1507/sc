@@ -1,5 +1,6 @@
 #include "config.h"
-#include "circuits/int_circuits.c"
+#include "validator/validator.h"
+#include "circuits/int_circuits.h"
 
 int main(){
    bit* a, *b;

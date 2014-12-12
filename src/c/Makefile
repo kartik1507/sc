@@ -115,6 +115,30 @@ test/fast:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+circuits/int_circuits.o: circuits/int_circuits.c.o
+.PHONY : circuits/int_circuits.o
+
+# target to build an object file
+circuits/int_circuits.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/circuits/int_circuits.c.o
+.PHONY : circuits/int_circuits.c.o
+
+circuits/int_circuits.i: circuits/int_circuits.c.i
+.PHONY : circuits/int_circuits.i
+
+# target to preprocess a source file
+circuits/int_circuits.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/circuits/int_circuits.c.i
+.PHONY : circuits/int_circuits.c.i
+
+circuits/int_circuits.s: circuits/int_circuits.c.s
+.PHONY : circuits/int_circuits.s
+
+# target to generate assembly for a file
+circuits/int_circuits.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/circuits/int_circuits.c.s
+.PHONY : circuits/int_circuits.c.s
+
 test/test.o: test/test.c.o
 .PHONY : test/test.o
 
@@ -139,6 +163,30 @@ test/test.c.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.s
 .PHONY : test/test.c.s
 
+validator/validator.o: validator/validator.c.o
+.PHONY : validator/validator.o
+
+# target to build an object file
+validator/validator.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.o
+.PHONY : validator/validator.c.o
+
+validator/validator.i: validator/validator.c.i
+.PHONY : validator/validator.i
+
+# target to preprocess a source file
+validator/validator.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.i
+.PHONY : validator/validator.c.i
+
+validator/validator.s: validator/validator.c.s
+.PHONY : validator/validator.s
+
+# target to generate assembly for a file
+validator/validator.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.s
+.PHONY : validator/validator.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -148,9 +196,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... circuits/int_circuits.o"
+	@echo "... circuits/int_circuits.i"
+	@echo "... circuits/int_circuits.s"
 	@echo "... test/test.o"
 	@echo "... test/test.i"
 	@echo "... test/test.s"
+	@echo "... validator/validator.o"
+	@echo "... validator/validator.i"
+	@echo "... validator/validator.s"
 .PHONY : help
 
 
