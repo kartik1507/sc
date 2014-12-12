@@ -1,5 +1,4 @@
 #include "config.h"
-#include "validator/validator.h"
 #include "circuits/int_circuits.h"
 
 int main(){
