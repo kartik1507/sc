@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/Users/wangxiao/git/sc/src/c/circuits/int_circuits.c
-../config.h
-/Users/wangxiao/git/sc/src/c/config.h
-../validator/validator.c
-/Users/wangxiao/git/sc/src/c/validator/validator.c
-
-/Users/wangxiao/git/sc/src/c/config.h
-validator/validator.c
-/Users/wangxiao/git/sc/src/c/validator/validator.c
-
-/Users/wangxiao/git/sc/src/c/test.c
+/Users/wangxiao/git/sc/src/c/test/test.c
 config.h
-/Users/wangxiao/git/sc/src/c/config.h
+/Users/wangxiao/git/sc/src/c/test/config.h
 circuits/int_circuits.c
-/Users/wangxiao/git/sc/src/c/circuits/int_circuits.c
+/Users/wangxiao/git/sc/src/c/test/circuits/int_circuits.c
 
-/Users/wangxiao/git/sc/src/c/validator/validator.c
+circuits/int_circuits.c
+config.h
+circuits/config.h
+
+config.h
+validator/validator.h
+validator/validator.h
+
+validator/validator.h
 stdio.h
 -
 stdlib.h
+-
+stdarg.h
 -
 

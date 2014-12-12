@@ -1,13 +1,12 @@
-#include "../config.h"
-#include "../validator/validator.c"
+#include "config.h"
 
-static bit* add(bit x, bit y, bit cin) {
-   bit *out = (bit*)malloc(2*sizeof(bit));
-
-   bit t1 = xor(x, cin);
-   bit t2 = xor(y, cin);
-   out[0] = xor(x, t2);
-   t1 = and(t1, t2);
-   out[1] = xor(cin, t1);
-return out;
+static void add(bit* out[2], bit* x, bit* y, bit* cin) {
+   bit *t1 , *t2;
+   new_bits(2, &t1, &t2);
+   xor(t1, x, cin);
+   xor(t2, y, cin);
+   xor(out[0], x, t2);
+   and(t1, t1, t2);
+   xor(out[1], cin, t1);
+   delete_bits(2, &t1, &t2);
 }

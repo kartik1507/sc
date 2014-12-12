@@ -1,1 +1,1 @@
-#include "validator/validator.c"
+#include "validator/validator.h"

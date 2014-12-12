@@ -49,62 +49,37 @@ include CMakeFiles/test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test.dir/flags.make
 
-CMakeFiles/test.dir/validator/validator.c.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/validator/validator.c.o: validator/validator.c
+CMakeFiles/test.dir/test/test.c.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/test/test.c.o: test/test.c
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/wangxiao/git/sc/src/c/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/test.dir/validator/validator.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/test.dir/validator/validator.c.o   -c /Users/wangxiao/git/sc/src/c/validator/validator.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/test.dir/test/test.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/test.dir/test/test.c.o   -c /Users/wangxiao/git/sc/src/c/test/test.c
 
-CMakeFiles/test.dir/validator/validator.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/validator/validator.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/wangxiao/git/sc/src/c/validator/validator.c > CMakeFiles/test.dir/validator/validator.c.i
+CMakeFiles/test.dir/test/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/test/test.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/wangxiao/git/sc/src/c/test/test.c > CMakeFiles/test.dir/test/test.c.i
 
-CMakeFiles/test.dir/validator/validator.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/validator/validator.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/wangxiao/git/sc/src/c/validator/validator.c -o CMakeFiles/test.dir/validator/validator.c.s
+CMakeFiles/test.dir/test/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/test/test.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/wangxiao/git/sc/src/c/test/test.c -o CMakeFiles/test.dir/test/test.c.s
 
-CMakeFiles/test.dir/validator/validator.c.o.requires:
-.PHONY : CMakeFiles/test.dir/validator/validator.c.o.requires
+CMakeFiles/test.dir/test/test.c.o.requires:
+.PHONY : CMakeFiles/test.dir/test/test.c.o.requires
 
-CMakeFiles/test.dir/validator/validator.c.o.provides: CMakeFiles/test.dir/validator/validator.c.o.requires
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.o.provides.build
-.PHONY : CMakeFiles/test.dir/validator/validator.c.o.provides
+CMakeFiles/test.dir/test/test.c.o.provides: CMakeFiles/test.dir/test/test.c.o.requires
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.o.provides.build
+.PHONY : CMakeFiles/test.dir/test/test.c.o.provides
 
-CMakeFiles/test.dir/validator/validator.c.o.provides.build: CMakeFiles/test.dir/validator/validator.c.o
-
-CMakeFiles/test.dir/test.c.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/test.c.o: test.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/wangxiao/git/sc/src/c/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/test.dir/test.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/test.dir/test.c.o   -c /Users/wangxiao/git/sc/src/c/test.c
-
-CMakeFiles/test.dir/test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/test.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/wangxiao/git/sc/src/c/test.c > CMakeFiles/test.dir/test.c.i
-
-CMakeFiles/test.dir/test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/test.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/wangxiao/git/sc/src/c/test.c -o CMakeFiles/test.dir/test.c.s
-
-CMakeFiles/test.dir/test.c.o.requires:
-.PHONY : CMakeFiles/test.dir/test.c.o.requires
-
-CMakeFiles/test.dir/test.c.o.provides: CMakeFiles/test.dir/test.c.o.requires
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.o.provides.build
-.PHONY : CMakeFiles/test.dir/test.c.o.provides
-
-CMakeFiles/test.dir/test.c.o.provides.build: CMakeFiles/test.dir/test.c.o
+CMakeFiles/test.dir/test/test.c.o.provides.build: CMakeFiles/test.dir/test/test.c.o
 
 # Object files for target test
 test_OBJECTS = \
-"CMakeFiles/test.dir/validator/validator.c.o" \
-"CMakeFiles/test.dir/test.c.o"
+"CMakeFiles/test.dir/test/test.c.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
-bin/test: CMakeFiles/test.dir/validator/validator.c.o
-bin/test: CMakeFiles/test.dir/test.c.o
+bin/test: CMakeFiles/test.dir/test/test.c.o
 bin/test: CMakeFiles/test.dir/build.make
 bin/test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable bin/test"
@@ -114,8 +89,7 @@ bin/test: CMakeFiles/test.dir/link.txt
 CMakeFiles/test.dir/build: bin/test
 .PHONY : CMakeFiles/test.dir/build
 
-CMakeFiles/test.dir/requires: CMakeFiles/test.dir/validator/validator.c.o.requires
-CMakeFiles/test.dir/requires: CMakeFiles/test.dir/test.c.o.requires
+CMakeFiles/test.dir/requires: CMakeFiles/test.dir/test/test.c.o.requires
 .PHONY : CMakeFiles/test.dir/requires
 
 CMakeFiles/test.dir/clean:

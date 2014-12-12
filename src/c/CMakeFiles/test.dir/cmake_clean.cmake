@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test.dir/validator/validator.c.o"
-  "CMakeFiles/test.dir/test.c.o"
+  "CMakeFiles/test.dir/test/test.c.o"
   "bin/test.pdb"
   "bin/test"
 )

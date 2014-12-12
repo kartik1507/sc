@@ -115,53 +115,29 @@ test/fast:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-test.o: test.c.o
-.PHONY : test.o
+test/test.o: test/test.c.o
+.PHONY : test/test.o
 
 # target to build an object file
-test.c.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.o
-.PHONY : test.c.o
+test/test.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.o
+.PHONY : test/test.c.o
 
-test.i: test.c.i
-.PHONY : test.i
-
-# target to preprocess a source file
-test.c.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.i
-.PHONY : test.c.i
-
-test.s: test.c.s
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.c.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.s
-.PHONY : test.c.s
-
-validator/validator.o: validator/validator.c.o
-.PHONY : validator/validator.o
-
-# target to build an object file
-validator/validator.c.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.o
-.PHONY : validator/validator.c.o
-
-validator/validator.i: validator/validator.c.i
-.PHONY : validator/validator.i
+test/test.i: test/test.c.i
+.PHONY : test/test.i
 
 # target to preprocess a source file
-validator/validator.c.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.i
-.PHONY : validator/validator.c.i
+test/test.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.i
+.PHONY : test/test.c.i
 
-validator/validator.s: validator/validator.c.s
-.PHONY : validator/validator.s
+test/test.s: test/test.c.s
+.PHONY : test/test.s
 
 # target to generate assembly for a file
-validator/validator.c.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.s
-.PHONY : validator/validator.c.s
+test/test.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.s
+.PHONY : test/test.c.s
 
 # Help Target
 help:
@@ -172,12 +148,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
-	@echo "... validator/validator.o"
-	@echo "... validator/validator.i"
-	@echo "... validator/validator.s"
+	@echo "... test/test.o"
+	@echo "... test/test.i"
+	@echo "... test/test.s"
 .PHONY : help
 
 

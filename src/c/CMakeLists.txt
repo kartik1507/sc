@@ -5,6 +5,7 @@ cmake_minimum_required (VERSION 2.8.11)
 project (sc)
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )
+include_directories(${CMAKE_SOURCE_DIR})
 
 # Recurse into the "Hello" and "Demo" subdirectories. This does not actually
 # cause another cmake executable to run. The same process will walk through
@@ -21,9 +22,7 @@ set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )
 # Add executable called "helloDemo" that is built from the source files
 # "demo.cxx" and "demo_b.cxx". The extensions are automatically found.
 add_executable (test
-   config.h 
-   validator/validator.c 
-   test.c)
+   test/test.c)
 
 # Link the executable to the Hello library. Since the Hello library has
 # public include directories we will use those link directories when building
