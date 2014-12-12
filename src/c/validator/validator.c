@@ -1,39 +1,37 @@
 #include "validator/validator.h"
 
-void 
-new_bit(bit** b) {
-   *b = malloc(sizeof(bit));
+
+bit* 
+new_bit()
+{
+   return malloc(sizeof(bit));
 }     
 
-void new_bit_array(bit*** bits, int length) {
-   int i;
-   *bits = malloc(length*sizeof(bit*));
-   for(i = 0; i < length; ++i)
-      new_bit(&(*bits)[i]);
+bit* new_bit_array(int length)
+{
+   return malloc(length*sizeof(bit));
 }
+
 void 
 new_bits(int number, ...) {
    int i;
    bit** b;
    va_list args;
    va_start (args, number);
-   for(i = 0; i < number; ++i){
+   for(i = 0; i < number; ++i) {
       b = va_arg(args, bit**);
-      new_bit(b);
+      *b = new_bit();
    }
 }
 
 void 
 delete_bit(bit** b) {
    free(*b);
-   b = NULL;
+   *b = NULL;
 }
 
 void
-delete_bit_array(bit*** bits, int length) {
-   int i;
-   for(i = 0; i < length; ++i)
-      delete_bit(&(*bits)[i]);
+delete_bit_array(bit** bits, int length) {
    free(*bits);
    *bits = NULL;
 }
@@ -70,17 +68,4 @@ int
 output_wire(bit* b, int party)
 {
    return *b;
-}
-
-
-void input_wire(bit** out, int* input, int length, int party)
-{
-   int i;
-   new_bit_array(&out, length);
-   for(i = 0; i < length; ++i)
-      input_wire(&out[i], input[i], party);
-}
-
-output_wire(int * out, bit** b, int length, int party)
-{
 }
