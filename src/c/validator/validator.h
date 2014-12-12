@@ -10,6 +10,12 @@ new_bit(bit** b) {
    *b = malloc(sizeof(bit));
 }     
 
+static void new_bit_array(bit*** bits, int length) {
+   int i;
+   *bits = malloc(length*sizeof(bit*));
+   for(i = 0; i < length; ++i)
+      new_bit(&(*bits)[i]);
+}
 static void 
 new_bits(int number, ...) {
    int i;
@@ -26,6 +32,15 @@ static void
 delete_bit(bit** b) {
    free(*b);
    b = NULL;
+}
+
+static void
+delete_bit_array(bit*** bits, int length) {
+   int i;
+   for(i = 0; i < length; ++i)
+      delete_bit(&(*bits)[i]);
+   free(*bits);
+   *bits = NULL;
 }
 
 static void 
