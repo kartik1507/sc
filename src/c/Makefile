@@ -103,24 +103,38 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named test_bit
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+test_bit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_bit
+.PHONY : test_bit
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+test_bit/fast:
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/build
+.PHONY : test_bit/fast
+
+#=============================================================================
+# Target rules for targets named test_bits
+
+# Build rule for target.
+test_bits: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_bits
+.PHONY : test_bits
+
+# fast build rule for target.
+test_bits/fast:
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/build
+.PHONY : test_bits/fast
 
 circuits/int_circuits.o: circuits/int_circuits.c.o
 .PHONY : circuits/int_circuits.o
 
 # target to build an object file
 circuits/int_circuits.c.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/circuits/int_circuits.c.o
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/circuits/int_circuits.c.o
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/circuits/int_circuits.c.o
 .PHONY : circuits/int_circuits.c.o
 
 circuits/int_circuits.i: circuits/int_circuits.c.i
@@ -128,7 +142,8 @@ circuits/int_circuits.i: circuits/int_circuits.c.i
 
 # target to preprocess a source file
 circuits/int_circuits.c.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/circuits/int_circuits.c.i
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/circuits/int_circuits.c.i
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/circuits/int_circuits.c.i
 .PHONY : circuits/int_circuits.c.i
 
 circuits/int_circuits.s: circuits/int_circuits.c.s
@@ -136,39 +151,89 @@ circuits/int_circuits.s: circuits/int_circuits.c.s
 
 # target to generate assembly for a file
 circuits/int_circuits.c.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/circuits/int_circuits.c.s
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/circuits/int_circuits.c.s
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/circuits/int_circuits.c.s
 .PHONY : circuits/int_circuits.c.s
 
-test/test.o: test/test.c.o
-.PHONY : test/test.o
+test/test_bit.o: test/test_bit.c.o
+.PHONY : test/test_bit.o
 
 # target to build an object file
-test/test.c.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.o
-.PHONY : test/test.c.o
+test/test_bit.c.o:
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/test/test_bit.c.o
+.PHONY : test/test_bit.c.o
 
-test/test.i: test/test.c.i
-.PHONY : test/test.i
+test/test_bit.i: test/test_bit.c.i
+.PHONY : test/test_bit.i
 
 # target to preprocess a source file
-test/test.c.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.i
-.PHONY : test/test.c.i
+test/test_bit.c.i:
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/test/test_bit.c.i
+.PHONY : test/test_bit.c.i
 
-test/test.s: test/test.c.s
-.PHONY : test/test.s
+test/test_bit.s: test/test_bit.c.s
+.PHONY : test/test_bit.s
 
 # target to generate assembly for a file
-test/test.c.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.s
-.PHONY : test/test.c.s
+test/test_bit.c.s:
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/test/test_bit.c.s
+.PHONY : test/test_bit.c.s
+
+test/test_bits.o: test/test_bits.c.o
+.PHONY : test/test_bits.o
+
+# target to build an object file
+test/test_bits.c.o:
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/test/test_bits.c.o
+.PHONY : test/test_bits.c.o
+
+test/test_bits.i: test/test_bits.c.i
+.PHONY : test/test_bits.i
+
+# target to preprocess a source file
+test/test_bits.c.i:
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/test/test_bits.c.i
+.PHONY : test/test_bits.c.i
+
+test/test_bits.s: test/test_bits.c.s
+.PHONY : test/test_bits.s
+
+# target to generate assembly for a file
+test/test_bits.c.s:
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/test/test_bits.c.s
+.PHONY : test/test_bits.c.s
+
+utils/converter.o: utils/converter.c.o
+.PHONY : utils/converter.o
+
+# target to build an object file
+utils/converter.c.o:
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/utils/converter.c.o
+.PHONY : utils/converter.c.o
+
+utils/converter.i: utils/converter.c.i
+.PHONY : utils/converter.i
+
+# target to preprocess a source file
+utils/converter.c.i:
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/utils/converter.c.i
+.PHONY : utils/converter.c.i
+
+utils/converter.s: utils/converter.c.s
+.PHONY : utils/converter.s
+
+# target to generate assembly for a file
+utils/converter.c.s:
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/utils/converter.c.s
+.PHONY : utils/converter.c.s
 
 validator/validator.o: validator/validator.c.o
 .PHONY : validator/validator.o
 
 # target to build an object file
 validator/validator.c.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.o
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/validator/validator.c.o
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/validator/validator.c.o
 .PHONY : validator/validator.c.o
 
 validator/validator.i: validator/validator.c.i
@@ -176,7 +241,8 @@ validator/validator.i: validator/validator.c.i
 
 # target to preprocess a source file
 validator/validator.c.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.i
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/validator/validator.c.i
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/validator/validator.c.i
 .PHONY : validator/validator.c.i
 
 validator/validator.s: validator/validator.c.s
@@ -184,7 +250,8 @@ validator/validator.s: validator/validator.c.s
 
 # target to generate assembly for a file
 validator/validator.c.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/validator/validator.c.s
+	$(MAKE) -f CMakeFiles/test_bit.dir/build.make CMakeFiles/test_bit.dir/validator/validator.c.s
+	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/validator/validator.c.s
 .PHONY : validator/validator.c.s
 
 # Help Target
@@ -195,13 +262,20 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
+	@echo "... test_bit"
+	@echo "... test_bits"
 	@echo "... circuits/int_circuits.o"
 	@echo "... circuits/int_circuits.i"
 	@echo "... circuits/int_circuits.s"
-	@echo "... test/test.o"
-	@echo "... test/test.i"
-	@echo "... test/test.s"
+	@echo "... test/test_bit.o"
+	@echo "... test/test_bit.i"
+	@echo "... test/test_bit.s"
+	@echo "... test/test_bits.o"
+	@echo "... test/test_bits.i"
+	@echo "... test/test_bits.s"
+	@echo "... utils/converter.o"
+	@echo "... utils/converter.i"
+	@echo "... utils/converter.s"
 	@echo "... validator/validator.o"
 	@echo "... validator/validator.i"
 	@echo "... validator/validator.s"

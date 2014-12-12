@@ -3,5 +3,8 @@
 #include "config.h"
 #define VALIDATE
 void 
-add(bit out[2], bit* x, bit* y, bit* cin);
+full_bit_adder(bit out[2], const bit* x, const bit* y, const bit* cin);
+
+void 
+add(bit* out, const bit* x, const bit * y, int length);
 #endif // INT_CIRCUITS_H__
