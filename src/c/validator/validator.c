@@ -1,5 +1,4 @@
 #include "validator/validator.h"
-
 bit* 
 new_bit()
 {
@@ -58,13 +57,29 @@ xor(bit* out, const bit* a, const bit* b)
 }
 
 void 
-input_wire(bit* out, int input, int party)
+input_wire(bit* out, bool input, enum Party party)
 {
    *out = input;
 }
 
-int 
-output_wire(bit* b, int party)
+void 
+input_wire_array(bit* out, bool* input, int length, enum Party party)
+{
+   int i;
+   for(i = 0; i < length; ++i)
+      input_wire(&out[i], input[i], party);
+}
+
+bool
+output_wire(bit* b, enum Party party)
 {
    return *b;
+}
+
+void 
+output_wire_array(bool* out, bit* b, int length, enum Party party)
+{
+   int i;
+   for(i = 0; i < length; ++i)
+      out[i] = b[i];
 }
