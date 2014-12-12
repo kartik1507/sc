@@ -61,13 +61,26 @@ xor(bit* out, const bit* a, const bit* b)
 }
 
 void 
-input_wire(bit* out, int input)
+input_wire(bit* out, int input, int party)
 {
    *out = input;
 }
 
 int 
-output_wire(bit* b)
+output_wire(bit* b, int party)
 {
    return *b;
+}
+
+
+void input_wire(bit** out, int* input, int length, int party)
+{
+   int i;
+   new_bit_array(&out, length);
+   for(i = 0; i < length; ++i)
+      input_wire(&out[i], input[i], party);
+}
+
+output_wire(int * out, bit** b, int length, int party)
+{
 }
