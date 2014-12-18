@@ -22,3 +22,11 @@ void add(bit* out, const bit* x, const bit * y, int length)
    }
    assign(out[length-1], t[1]);
 }
+
+void and_array(bit* out, const bit* x, const bit * y, int length) 
+{
+   for(int i = 0; i < length; ++i) 
+   {
+      and(out[i], x[i], y[i]);
+   }
+}

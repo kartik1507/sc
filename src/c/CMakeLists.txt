@@ -23,10 +23,16 @@ include_directories(${CMAKE_SOURCE_DIR})
 
 # Add executable called "helloDemo" that is built from the source files
 # "demo.cxx" and "demo_b.cxx". The extensions are automatically found.
-add_executable (test_bit
+add_executable (test_xor
    circuits/int_circuits.c
    validator/validator.c
-   test/test_bit.c
+   test/test_xor.c
+   )
+
+add_executable (test_and
+   circuits/int_circuits.c
+   validator/validator.c
+   test/test_and.c
    )
 add_executable (test_bits
    circuits/int_circuits.c

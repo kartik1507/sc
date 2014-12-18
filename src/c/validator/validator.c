@@ -1,5 +1,10 @@
 #include "validator/validator.h"
 
+void init()
+{
+   ONE[0] = true;
+ZERO[0] = false;
+} 
 void assign(bit a, bit b)
 {
    *a = *b;
@@ -42,10 +47,10 @@ input_wire_array(bit* out, bool* input, int length, enum Party party)
       input_wire(out[i], input[i], party);
 }
 
-bool
-output_wire(bit b, enum Party party)
+void
+output_wire(bool* res, bit b, enum Party party)
 {
-   return *b;
+   *res = *b;
 }
 
 void 
@@ -53,5 +58,5 @@ output_wire_array(bool* out, bit* b, int length, enum Party party)
 {
    int i;
    for(i = 0; i < length; ++i)
-      out[i] = b[i];
+      output_wire(&out[i], b[i], party);
 }

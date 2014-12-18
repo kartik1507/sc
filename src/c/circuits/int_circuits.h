@@ -7,4 +7,7 @@ full_bit_adder(bit out[2], const bit x, const bit y, const bit cin);
 
 void 
 add(bit* out, const bit* x, const bit * y, int length);
+
+void 
+and_array(bit* out, const bit* x, const bit * y, int length);
 #endif // INT_CIRCUITS_H__
