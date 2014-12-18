@@ -103,6 +103,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_add
+
+# Build rule for target.
+test_add: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_add
+.PHONY : test_add
+
+# fast build rule for target.
+test_add/fast:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/build
+.PHONY : test_add/fast
+
+#=============================================================================
 # Target rules for targets named test_and
 
 # Build rule for target.
@@ -116,17 +129,43 @@ test_and/fast:
 .PHONY : test_and/fast
 
 #=============================================================================
-# Target rules for targets named test_bits
+# Target rules for targets named test_client
 
 # Build rule for target.
-test_bits: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_bits
-.PHONY : test_bits
+test_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_client
+.PHONY : test_client
 
 # fast build rule for target.
-test_bits/fast:
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/build
-.PHONY : test_bits/fast
+test_client/fast:
+	$(MAKE) -f CMakeFiles/test_client.dir/build.make CMakeFiles/test_client.dir/build
+.PHONY : test_client/fast
+
+#=============================================================================
+# Target rules for targets named test_network
+
+# Build rule for target.
+test_network: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_network
+.PHONY : test_network
+
+# fast build rule for target.
+test_network/fast:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/build
+.PHONY : test_network/fast
+
+#=============================================================================
+# Target rules for targets named test_server
+
+# Build rule for target.
+test_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_server
+.PHONY : test_server
+
+# fast build rule for target.
+test_server/fast:
+	$(MAKE) -f CMakeFiles/test_server.dir/build.make CMakeFiles/test_server.dir/build
+.PHONY : test_server/fast
 
 #=============================================================================
 # Target rules for targets named test_xor
@@ -146,8 +185,8 @@ circuits/int_circuits.o: circuits/int_circuits.c.o
 
 # target to build an object file
 circuits/int_circuits.c.o:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/circuits/int_circuits.c.o
 	$(MAKE) -f CMakeFiles/test_and.dir/build.make CMakeFiles/test_and.dir/circuits/int_circuits.c.o
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/circuits/int_circuits.c.o
 	$(MAKE) -f CMakeFiles/test_xor.dir/build.make CMakeFiles/test_xor.dir/circuits/int_circuits.c.o
 .PHONY : circuits/int_circuits.c.o
 
@@ -156,8 +195,8 @@ circuits/int_circuits.i: circuits/int_circuits.c.i
 
 # target to preprocess a source file
 circuits/int_circuits.c.i:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/circuits/int_circuits.c.i
 	$(MAKE) -f CMakeFiles/test_and.dir/build.make CMakeFiles/test_and.dir/circuits/int_circuits.c.i
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/circuits/int_circuits.c.i
 	$(MAKE) -f CMakeFiles/test_xor.dir/build.make CMakeFiles/test_xor.dir/circuits/int_circuits.c.i
 .PHONY : circuits/int_circuits.c.i
 
@@ -166,10 +205,34 @@ circuits/int_circuits.s: circuits/int_circuits.c.s
 
 # target to generate assembly for a file
 circuits/int_circuits.c.s:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/circuits/int_circuits.c.s
 	$(MAKE) -f CMakeFiles/test_and.dir/build.make CMakeFiles/test_and.dir/circuits/int_circuits.c.s
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/circuits/int_circuits.c.s
 	$(MAKE) -f CMakeFiles/test_xor.dir/build.make CMakeFiles/test_xor.dir/circuits/int_circuits.c.s
 .PHONY : circuits/int_circuits.c.s
+
+test/test_add.o: test/test_add.c.o
+.PHONY : test/test_add.o
+
+# target to build an object file
+test/test_add.c.o:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/test/test_add.c.o
+.PHONY : test/test_add.c.o
+
+test/test_add.i: test/test_add.c.i
+.PHONY : test/test_add.i
+
+# target to preprocess a source file
+test/test_add.c.i:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/test/test_add.c.i
+.PHONY : test/test_add.c.i
+
+test/test_add.s: test/test_add.c.s
+.PHONY : test/test_add.s
+
+# target to generate assembly for a file
+test/test_add.c.s:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/test/test_add.c.s
+.PHONY : test/test_add.c.s
 
 test/test_and.o: test/test_and.c.o
 .PHONY : test/test_and.o
@@ -195,29 +258,77 @@ test/test_and.c.s:
 	$(MAKE) -f CMakeFiles/test_and.dir/build.make CMakeFiles/test_and.dir/test/test_and.c.s
 .PHONY : test/test_and.c.s
 
-test/test_bits.o: test/test_bits.c.o
-.PHONY : test/test_bits.o
+test/test_network.o: test/test_network.c.o
+.PHONY : test/test_network.o
 
 # target to build an object file
-test/test_bits.c.o:
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/test/test_bits.c.o
-.PHONY : test/test_bits.c.o
+test/test_network.c.o:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/test/test_network.c.o
+.PHONY : test/test_network.c.o
 
-test/test_bits.i: test/test_bits.c.i
-.PHONY : test/test_bits.i
+test/test_network.i: test/test_network.c.i
+.PHONY : test/test_network.i
 
 # target to preprocess a source file
-test/test_bits.c.i:
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/test/test_bits.c.i
-.PHONY : test/test_bits.c.i
+test/test_network.c.i:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/test/test_network.c.i
+.PHONY : test/test_network.c.i
 
-test/test_bits.s: test/test_bits.c.s
-.PHONY : test/test_bits.s
+test/test_network.s: test/test_network.c.s
+.PHONY : test/test_network.s
 
 # target to generate assembly for a file
-test/test_bits.c.s:
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/test/test_bits.c.s
-.PHONY : test/test_bits.c.s
+test/test_network.c.s:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/test/test_network.c.s
+.PHONY : test/test_network.c.s
+
+test/test_networkc.o: test/test_networkc.c.o
+.PHONY : test/test_networkc.o
+
+# target to build an object file
+test/test_networkc.c.o:
+	$(MAKE) -f CMakeFiles/test_client.dir/build.make CMakeFiles/test_client.dir/test/test_networkc.c.o
+.PHONY : test/test_networkc.c.o
+
+test/test_networkc.i: test/test_networkc.c.i
+.PHONY : test/test_networkc.i
+
+# target to preprocess a source file
+test/test_networkc.c.i:
+	$(MAKE) -f CMakeFiles/test_client.dir/build.make CMakeFiles/test_client.dir/test/test_networkc.c.i
+.PHONY : test/test_networkc.c.i
+
+test/test_networkc.s: test/test_networkc.c.s
+.PHONY : test/test_networkc.s
+
+# target to generate assembly for a file
+test/test_networkc.c.s:
+	$(MAKE) -f CMakeFiles/test_client.dir/build.make CMakeFiles/test_client.dir/test/test_networkc.c.s
+.PHONY : test/test_networkc.c.s
+
+test/test_networks.o: test/test_networks.c.o
+.PHONY : test/test_networks.o
+
+# target to build an object file
+test/test_networks.c.o:
+	$(MAKE) -f CMakeFiles/test_server.dir/build.make CMakeFiles/test_server.dir/test/test_networks.c.o
+.PHONY : test/test_networks.c.o
+
+test/test_networks.i: test/test_networks.c.i
+.PHONY : test/test_networks.i
+
+# target to preprocess a source file
+test/test_networks.c.i:
+	$(MAKE) -f CMakeFiles/test_server.dir/build.make CMakeFiles/test_server.dir/test/test_networks.c.i
+.PHONY : test/test_networks.c.i
+
+test/test_networks.s: test/test_networks.c.s
+.PHONY : test/test_networks.s
+
+# target to generate assembly for a file
+test/test_networks.c.s:
+	$(MAKE) -f CMakeFiles/test_server.dir/build.make CMakeFiles/test_server.dir/test/test_networks.c.s
+.PHONY : test/test_networks.c.s
 
 test/test_xor.o: test/test_xor.c.o
 .PHONY : test/test_xor.o
@@ -248,7 +359,7 @@ utils/converter.o: utils/converter.c.o
 
 # target to build an object file
 utils/converter.c.o:
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/utils/converter.c.o
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/utils/converter.c.o
 .PHONY : utils/converter.c.o
 
 utils/converter.i: utils/converter.c.i
@@ -256,7 +367,7 @@ utils/converter.i: utils/converter.c.i
 
 # target to preprocess a source file
 utils/converter.c.i:
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/utils/converter.c.i
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/utils/converter.c.i
 .PHONY : utils/converter.c.i
 
 utils/converter.s: utils/converter.c.s
@@ -264,16 +375,64 @@ utils/converter.s: utils/converter.c.s
 
 # target to generate assembly for a file
 utils/converter.c.s:
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/utils/converter.c.s
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/utils/converter.c.s
 .PHONY : utils/converter.c.s
+
+utils/error.o: utils/error.c.o
+.PHONY : utils/error.o
+
+# target to build an object file
+utils/error.c.o:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/utils/error.c.o
+.PHONY : utils/error.c.o
+
+utils/error.i: utils/error.c.i
+.PHONY : utils/error.i
+
+# target to preprocess a source file
+utils/error.c.i:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/utils/error.c.i
+.PHONY : utils/error.c.i
+
+utils/error.s: utils/error.c.s
+.PHONY : utils/error.s
+
+# target to generate assembly for a file
+utils/error.c.s:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/utils/error.c.s
+.PHONY : utils/error.c.s
+
+utils/net.o: utils/net.c.o
+.PHONY : utils/net.o
+
+# target to build an object file
+utils/net.c.o:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/utils/net.c.o
+.PHONY : utils/net.c.o
+
+utils/net.i: utils/net.c.i
+.PHONY : utils/net.i
+
+# target to preprocess a source file
+utils/net.c.i:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/utils/net.c.i
+.PHONY : utils/net.c.i
+
+utils/net.s: utils/net.c.s
+.PHONY : utils/net.s
+
+# target to generate assembly for a file
+utils/net.c.s:
+	$(MAKE) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/utils/net.c.s
+.PHONY : utils/net.c.s
 
 validator/validator.o: validator/validator.c.o
 .PHONY : validator/validator.o
 
 # target to build an object file
 validator/validator.c.o:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/validator/validator.c.o
 	$(MAKE) -f CMakeFiles/test_and.dir/build.make CMakeFiles/test_and.dir/validator/validator.c.o
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/validator/validator.c.o
 	$(MAKE) -f CMakeFiles/test_xor.dir/build.make CMakeFiles/test_xor.dir/validator/validator.c.o
 .PHONY : validator/validator.c.o
 
@@ -282,8 +441,8 @@ validator/validator.i: validator/validator.c.i
 
 # target to preprocess a source file
 validator/validator.c.i:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/validator/validator.c.i
 	$(MAKE) -f CMakeFiles/test_and.dir/build.make CMakeFiles/test_and.dir/validator/validator.c.i
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/validator/validator.c.i
 	$(MAKE) -f CMakeFiles/test_xor.dir/build.make CMakeFiles/test_xor.dir/validator/validator.c.i
 .PHONY : validator/validator.c.i
 
@@ -292,8 +451,8 @@ validator/validator.s: validator/validator.c.s
 
 # target to generate assembly for a file
 validator/validator.c.s:
+	$(MAKE) -f CMakeFiles/test_add.dir/build.make CMakeFiles/test_add.dir/validator/validator.c.s
 	$(MAKE) -f CMakeFiles/test_and.dir/build.make CMakeFiles/test_and.dir/validator/validator.c.s
-	$(MAKE) -f CMakeFiles/test_bits.dir/build.make CMakeFiles/test_bits.dir/validator/validator.c.s
 	$(MAKE) -f CMakeFiles/test_xor.dir/build.make CMakeFiles/test_xor.dir/validator/validator.c.s
 .PHONY : validator/validator.c.s
 
@@ -305,24 +464,42 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test_add"
 	@echo "... test_and"
-	@echo "... test_bits"
+	@echo "... test_client"
+	@echo "... test_network"
+	@echo "... test_server"
 	@echo "... test_xor"
 	@echo "... circuits/int_circuits.o"
 	@echo "... circuits/int_circuits.i"
 	@echo "... circuits/int_circuits.s"
+	@echo "... test/test_add.o"
+	@echo "... test/test_add.i"
+	@echo "... test/test_add.s"
 	@echo "... test/test_and.o"
 	@echo "... test/test_and.i"
 	@echo "... test/test_and.s"
-	@echo "... test/test_bits.o"
-	@echo "... test/test_bits.i"
-	@echo "... test/test_bits.s"
+	@echo "... test/test_network.o"
+	@echo "... test/test_network.i"
+	@echo "... test/test_network.s"
+	@echo "... test/test_networkc.o"
+	@echo "... test/test_networkc.i"
+	@echo "... test/test_networkc.s"
+	@echo "... test/test_networks.o"
+	@echo "... test/test_networks.i"
+	@echo "... test/test_networks.s"
 	@echo "... test/test_xor.o"
 	@echo "... test/test_xor.i"
 	@echo "... test/test_xor.s"
 	@echo "... utils/converter.o"
 	@echo "... utils/converter.i"
 	@echo "... utils/converter.s"
+	@echo "... utils/error.o"
+	@echo "... utils/error.i"
+	@echo "... utils/error.s"
+	@echo "... utils/net.o"
+	@echo "... utils/net.i"
+	@echo "... utils/net.s"
 	@echo "... validator/validator.o"
 	@echo "... validator/validator.i"
 	@echo "... validator/validator.s"

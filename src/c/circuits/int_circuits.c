@@ -1,6 +1,6 @@
 #include "circuits/int_circuits.h"
-   void 
-full_bit_adder(bit out[2], const bit x, const bit y, const bit cin) 
+
+void  full_bit_adder(bit out[2], const bit x, const bit y, const bit cin) 
 {
    bit t1 , t2;
    xor(t1, x, cin);

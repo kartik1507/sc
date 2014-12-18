@@ -9,20 +9,12 @@ set (CMAKE_C_FLAGS "${CMAKE_ANSI_CFLAGS} ${CMAKE_C_FLAGS} -std=c99")
 
 include_directories(${CMAKE_SOURCE_DIR})
 
-# Recurse into the "Hello" and "Demo" subdirectories. This does not actually
-# cause another cmake executable to run. The same process will walk through
-# the project's entire directory structure.
-#add_subdirectory (validator)
-
-# Create a library called "Hello" which includes the source file "hello.cxx".
-# The extension is already found. Any number of sources could be listed here.
 
 # Make sure the compiler can find include files for our Hello library
 # when other libraries or executables link to Hello
 #target_include_directories (Hello PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set(BASE utils/net.c utils/error.c)
 
-# Add executable called "helloDemo" that is built from the source files
-# "demo.cxx" and "demo_b.cxx". The extensions are automatically found.
 add_executable (test_xor
    circuits/int_circuits.c
    validator/validator.c
@@ -34,14 +26,22 @@ add_executable (test_and
    validator/validator.c
    test/test_and.c
    )
-add_executable (test_bits
-   circuits/int_circuits.c
-   validator/validator.c
-   test/test_bits.c
-   utils/converter.c
+
+add_executable (test_network
+   test/test_network.c
+   ${BASE}
    )
 
-# Link the executable to the Hello library. Since the Hello library has
-# public include directories we will use those link directories when building
-# helloDemo
-#target_link_libraries (helloDemo LINK_PUBLIC Hello)
+add_executable (test_server
+   test/test_networks.c
+   )
+
+add_executable (test_client
+   test/test_networkc.c
+   )
+add_executable (test_add
+   circuits/int_circuits.c
+   validator/validator.c
+   test/test_add.c
+   utils/converter.c
+   )
