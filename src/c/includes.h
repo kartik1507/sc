@@ -14,6 +14,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <netdb.h>
+#include <emmintrin.h>
 
 #include "utils/converter.h"
 #include "utils/error.h"

@@ -15,17 +15,40 @@ include_directories(${CMAKE_SOURCE_DIR})
 #target_include_directories (Hello PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 set(BASE utils/net.c utils/error.c)
 
+remove_definitions(-DGC -DVALIDATOR)
+add_definitions(-DGC)
+add_executable (test_halfgate
+   test/test_sc_and.c
+   utils/simd.c
+   circuits/int_circuits.c
+   gc/halfgate/gc.c
+   )
+remove_definitions(-DGC -DVALIDATOR)
+
+add_definitions(-DGC)
+add_executable (test_simd
+   test/test_simd.c
+   utils/simd.c
+   )
+remove_definitions(-DGC -DVALIDATOR)
+
+
+add_definitions(-DGC)
 add_executable (test_xor
    circuits/int_circuits.c
    validator/validator.c
    test/test_xor.c
    )
+remove_definitions(-DGC -DVALIDATOR)
 
+add_definitions(-DGC)
 add_executable (test_and
    circuits/int_circuits.c
    validator/validator.c
    test/test_and.c
    )
+remove_definitions(-DGC -DVALIDATOR)
+
 
 add_executable (test_network
    test/test_network.c
@@ -39,6 +62,10 @@ add_executable (test_server
 add_executable (test_client
    test/test_networkc.c
    )
+
+
+remove_definitions(-DGC -DVALIDATOR)
+add_definitions(-DGC)
 add_executable (test_add
    circuits/int_circuits.c
    validator/validator.c
